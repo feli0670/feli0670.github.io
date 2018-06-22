@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html>
     <head>
             <meta charset="utf-8">
             <title>
                   Tilfældigheds generator
             </title>
+            <link rel="shortcut icon" href="./assets/terning.png"/>
             <link rel="stylesheet" href="./alle.css">
             <link rel="stylesheet" href="generator.css">
+            
             <script
 			  src="https://code.jquery.com/jquery-3.3.1.js"
 			  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
@@ -18,20 +19,16 @@
 
 <body>
         <select id="type-select">
-                <option value="rugbrødsmad">Rugbrødsmad</option>
-                <option value="menneske">Mand (vælg 4 muligheder for at det giver mening)</option>
-                <option value="janej">Ja/nej(vælg 1 i antal muligheder for, at det giver mening)</option>
+                <option value="menneske">Menneske</option>
+                <option value="janej">Ja/nej</option>
                 <option value="none" selected>--Vælg--</option>
         </select>
 
-        <select id="antal">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="none" selected>--Vælg antal muligheder--</option>
-        </select>
+       
+        <div id="tilbagebtn">
+                <button id="tilbage"> &lt;--Tilbage</button>
+        </div>
+        
 
         <div id="kassebeholder">
      
@@ -41,52 +38,91 @@
                 <button id=genbtn>Generate</button>
         </div>
 
-
-
         <script>
         
                 // 
                 var knap = $('#genbtn');
                 var typeSelect = $('#type-select'); 
-                var antalSelect = $('#antal');
                 var kassebeholder = $('#kassebeholder');
 
                 function vedknaptryk(){
                         var type = typeSelect.val();
-                        var antal = antalSelect.val();
+                        var antal;
+                        if (type=='menneske') {
+                                antal = 4
+                        } else {
+                                antal = 1
+                        }
                         
                         kassebeholder.empty();
                         for(i=1; i <=antal;  i++){
 
                                 var liste = ['IKKE LAVET ENDNU'];
                                 var svar;
-                                if (type == 'rugbrødsmad' ){
-                                        // lav ny liste
-                                }
+
 
                                  if (type == 'menneske' ){
                                          if (i == 1) { // HOVED
                                                 liste = [
-                                                        '<img src="./assets/boble.png" >',
-                                                        '<img src="./assets/boblesplat.png" >',
-                                                        
-                                                ]
+                                                        '<img src="./Hoved/Skærmbillede 2018-06-22 kl. 11.46.42.png">',
+                                                        '<img src="./Hoved/Skærmbillede 2018-06-22 kl. 11.47.01.png">',
+                                                        '<img src="./Hoved/Skærmbillede 2018-06-22 kl. 11.47.18.png">',
+                                                        '<img src="./Hoved/Skærmbillede 2018-06-22 kl. 11.47.56.png">',
+                                                        '<img src="./Hoved/Skærmbillede 2018-06-22 kl. 11.48.42.png">',
+                                                        '<img src="./Hoved/Skærmbillede 2018-06-22 kl. 11.48.52.png">',
+                                                        '<img src="./Hoved/Skærmbillede 2018-06-22 kl. 11.49.11.png">',
+                                                        '<img src="./Hoved/Skærmbillede 2018-06-22 kl. 11.49.38.png">',
+                                                        '<img src="./Hoved/Skærmbillede 2018-06-22 kl. 11.50.10.png">',
+                                                        '<img src="./Hoved/Skærmbillede 2018-06-22 kl. 11.49.51.png">'
+                                                        ]
+                        
                                         } else if (i == 2) { // KROP
                                                 liste = [
-                                                        '<img src="./assets/boble.png" >',
-                                                        '<img src="./assets/boblesplat.png" >',
+                                                        '<img src="./Krop/Skærmbillede 2018-06-22 kl. 12.07.09.png">',
+                                                        '<img src="./Krop/Skærmbillede 2018-06-22 kl. 12.07.52.png">',
+                                                        '<img src="./Krop/Skærmbillede 2018-06-22 kl. 12.08.19.png">',
+                                                        '<img src="./Krop/Skærmbillede 2018-06-22 kl. 12.09.41.png">',
+                                                        '<img src="./Krop/Skærmbillede 2018-06-22 kl. 12.10.34.png">',
+                                                        '<img src="./Krop/Skærmbillede 2018-06-22 kl. 12.11.37.png">',
+                                                        '<img src="./Krop/Skærmbillede 2018-06-22 kl. 12.11.58.png">',
+                                                        '<img src="./Krop/Skærmbillede 2018-06-22 kl. 12.12.30.png">',
+                                                        '<img src="./Krop/Skærmbillede 2018-06-22 kl. 12.12.59.png">',
+                                                        '<img src="./Krop/Skærmbillede 2018-06-22 kl. 12.13.34.png">',
+                                                        '<img src="./Krop/Skærmbillede 2018-06-22 kl. 12.13.45.png">',
+                                                        '<img src="./Krop/Skærmbillede 2018-06-22 kl. 12.15.58.png">',
+                                                        '<img src="./Krop/Skærmbillede 2018-06-22 kl. 12.15.38.png">',
+                                                        '<img src="./Krop/Skærmbillede 2018-06-22 kl. 12.15.06.png">',
+                                                        '<img src="./Krop/Skærmbillede 2018-06-22 kl. 12.29.08.png">'
+                                                        ]
                                                         
-                                                ]
+
                                         } else if (i == 3) { // BEN
                                                 liste = [
-                                                        '<img src="./assets/boble.png" >',
-                                                        '<img src="./assets/boblesplat.png" >',
-                                                        
+                                                        '<img src="./Ben/Skærmbillede 2018-06-22 kl. 12.25.18.png">',
+                                                        '<img src="./Ben/Skærmbillede 2018-06-22 kl. 12.25.25.png">',
+                                                        '<img src="./Ben/Skærmbillede 2018-06-22 kl. 12.26.47.png">',
+                                                        '<img src="./Ben/Skærmbillede 2018-06-22 kl. 12.26.58.png">',
+                                                        '<img src="./Ben/Skærmbillede 2018-06-22 kl. 12.27.39.png">',
+                                                        '<img src="./Ben/Skærmbillede 2018-06-22 kl. 12.27.22.png">',
+                                                        '<img src="./Ben/Skærmbillede 2018-06-22 kl. 12.27.51.png">',
+                                                        '<img src="./Ben/Skærmbillede 2018-06-22 kl. 12.31.27.png">',
+                                                        '<img src="./Ben/Skærmbillede 2018-06-22 kl. 12.31.50.png">',
+                                                        '<img src="./Ben/Skærmbillede 2018-06-22 kl. 12.32.58.png">',
+                                                        '<img src="./Ben/Skærmbillede 2018-06-22 kl. 12.33.10.png">',
+                                                        '<img src="./Ben/Skærmbillede 2018-06-22 kl. 12.34.10.png">',
+                                                        '<img src="./Ben/Skærmbillede 2018-06-22 kl. 13.58.23.png">'        
                                                 ]
+
                                         } else if (i == 4) { //SKO
                                                 liste = [
-                                                        '<img src="./assets/boble.png" >',
-                                                        '<img src="./assets/boblesplat.png" >',
+                                                        '<img src="./Sko/Skærmbillede 2018-06-22 kl. 13.20.09.png">',
+                                                        '<img src="./Sko/Skærmbillede 2018-06-22 kl. 13.20.22.png">',
+                                                        '<img src="./Sko/Skærmbillede 2018-06-22 kl. 13.21.06.png">',
+                                                        '<img src="./Sko/Skærmbillede 2018-06-22 kl. 13.22.06.png">',
+                                                        '<img src="./Sko/Skærmbillede 2018-06-22 kl. 13.51.24.png">',
+                                                        '<img src="./Sko/Skærmbillede 2018-06-22 kl. 13.52.45.png">',
+                                                        '<img src="./Sko/Skærmbillede 2018-06-22 kl. 13.53.38.png">',
+                                                        '<img src="./Sko/Skærmbillede 2018-06-22 kl. 13.54.14.png">'
                                                         
                                                 ]
                                         } 
@@ -94,12 +130,12 @@
 
 
                                  if (type == 'janej' ){
-                                        liste = ['Ja', 'Nej', 'Måske']
+                                        liste = ['Ja', 'Nej']
                                         
                                 }
 
-                                var nummer = Math.round(Math.random() * (liste.length - 1));
-                                svar = liste[nummer];
+                                var random = Math.round(Math.random() * (liste.length - 1));
+                                svar = liste[random];
                           
                                 var nykasse = $('<div class="kasse">' + svar + '</div>');
                                 kassebeholder.append(nykasse);
@@ -107,6 +143,10 @@
                         }
                 }
                 knap.click(vedknaptryk);
+
+                $('#tilbage').click(function() {
+                        history.go(-1)
+                });
 
         
         </script>
