@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <meta charset="utf-8">
+            <title>
+                  
+            </title>
+            <link rel="stylesheet" href="./alle.css">
+            <link rel="stylesheet" href="forside.css">
+            <script
+			  src="https://code.jquery.com/jquery-3.3.1.js"
+			  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+			  crossorigin="anonymous"></script>
+    </head>
+
+<body>
+        <h1> Fang det du vil ind på!!!</h1>
+       
+        <h2 class="dumknap" ><a id="spil" href="spil.html"></a> </h2>
+        <h2 class="dumknap2" ><a id="tilfknap" href="tilfaeldig.html"></a> </h1>
+    
+    <script>
+
+        var dk=575;
+        var afstand = 90; // angivet i px
+        var afstand1 = 250
+
+        console.log($('.dumknap'))
+        // koden inden i her kører når man har musen over
+        $('.dumknap').hover(function() {
+      
+                $('.dumknap').animate({
+                    margin: Math.random * afstand1 +"%",
+                    top: Math.random() * afstand1 +"%",
+                });
+
+        });
+
+        // koden indeni her kører hvert sekund
+        setInterval(function(){
+                
+                $('.dumknap').animate({
+                    left: Math.random() * afstand +"%",
+                    top: Math.random() * afstand +"%",
+                }, dk);
+
+        }, dk);
+
+
+        console.log($('.dumknap2'))
+        // koden inden i her kører når man har musen over
+        $('.dumknap2').hover(function() {
+      forside
+            $('.dumknap2').animate({
+                left: Math.random() * afstand1+"%",
+                top: Math.random() * afstand1+"%",
+            });
+
+        });
+
+        // koden indeni her kører hvert sekund
+        setInterval(function(){
+
+            $('.dumknap2').animate({
+                left: Math.random() * afstand+"%",
+                top: Math.random() * afstand+"%",
+            }, dk);
+
+        }, dk);
+
+
+    </script>
+</body>

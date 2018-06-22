@@ -1,0 +1,42 @@
+body{
+overflow: hidden;
+}
+
+.boble {
+    background-image: url(./assets/boble.png);
+    background-repeat: no-repeat;
+    display: block;
+    background-size: contain;
+    width: 75px;
+    height: 75px;
+    position: absolute;
+}
+
+.sprængt {
+    animation: pop 0.5s steps(5);
+    animation-timing-function: linear;
+}
+
+.infoboks{
+    border: 2px solid;
+    padding: 5px;
+    display: inline;
+}
+#tid {
+    float:right;
+    margin-right: 30px;
+}
+
+#point{
+    float:left;
+    margin-left: 30px;
+}
+
+@keyframes pop {
+    0% { background-image: url(./assets/boblesplat.png)}
+    20% {background-image: url(./assets/boblesplat1.png)}
+    40% {background-image: url(./assets/boblesplat2.png)}
+    60% {background-image: url(./assets/boblesplat3.png)}
+    80% {background-image: url(./assets/boblesplat4.png)}
+    100% { background-image: url(./assets/boblesplat4.png)}
+}

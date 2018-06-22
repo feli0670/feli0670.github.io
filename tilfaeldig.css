@@ -1,0 +1,53 @@
+#title{
+    position: absolute;
+    top: 39%;
+    left: 36%;
+    background-color: rgb(113, 113, 238);
+    border: 2px solid black;
+    border-radius: 12px;
+    text-decoration: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.dumknap {
+    position: absolute;
+    overflow: hidden;
+}
+
+.dumknap2 {
+    position: absolute;
+    overflow: hidden;
+}
+
+body {
+    overflow: hidden;
+}
+
+#forside{
+    background-repeat: no-repeat;
+    background-image: url(http://whitelight.se/data/uploads/icon-house-retina.png);
+    display: block;
+    background-size: contain;
+    width: 75px;
+    height: 75px;
+}
+#forside:hover {
+    background-size: contain;
+}
+
+#spil {
+    background-repeat: no-repeat;
+    background-image: url(./assets/controller.png);
+    display: block;
+    background-size: contain;
+    width: 75px;
+    height: 75px;
+}
+
+#spil:hover {
+    background-size: contain;
+    background-image: url(./assets/controllerklik.png)
+}

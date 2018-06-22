@@ -1,0 +1,47 @@
+h1{
+    position: absolute;
+    top: 45%;
+    left: 35%;
+}
+
+.dumknap {
+    position: absolute;
+    overflow: hidden;
+}
+
+.dumknap2 {
+    position: absolute;
+    overflow: hidden;
+}
+
+body {
+    overflow: hidden;
+}
+
+#spil{
+    background-repeat: no-repeat;
+    background-image: url(./assets/controller.png);
+    display: block;
+    background-size: contain;
+    width: 75px;
+    height: 75px;
+}
+
+#spil:hover {
+    background-size: contain;
+    background-image: url(./assets/controllerklik.png)
+}
+
+#tilfknap {
+    background-repeat: no-repeat;
+    background-image: url(./assets/terning.png);
+    display: block;
+    background-size: contain;
+    width: 75px;
+    height: 75px;
+}
+
+#tilfknap:hover {
+    background-size: contain;
+    background-image: url(./assets/terningklik.png)
+}

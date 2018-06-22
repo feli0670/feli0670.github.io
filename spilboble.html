@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <meta charset="utf-8">
+            <title>
+                  Boble spil
+            </title>
+            <link rel="stylesheet" href="./alle.css">
+            <link rel="stylesheet" href="spilboble.css">
+            <script
+			  src="https://code.jquery.com/jquery-3.3.1.js"
+			  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+			  crossorigin="anonymous"></script>
+    </head>
+
+<body>
+    
+<p id="tid" class="infoboks">
+    
+</p>
+<p id="point" class="infoboks">
+
+</p>
+        <script>
+
+                var sekunder = 60;
+                var pops = 0;
+        
+
+                // de her to linier skal køre hvert sekund
+                $('#tid').text("Tid: " + Math.floor(sekunder / 60) + ":" + (sekunder % 60) );
+                function opdaterTid(){
+                    sekunder = sekunder - 1;
+                    $('#tid').text("Tid: " + Math.floor(sekunder / 60) + ":" + (sekunder % 60) );
+                    if(sekunder == 0){
+                        alert("Game Over\n" + "Pops: " + pops )
+                        history.go(-1)
+                    }
+                }
+
+                setInterval(opdaterTid, 1000)
+
+                $('#point').text("Point: "+pops);
+                function lavnyboble(){
+                    var boble = $('<div class="boble"></div>');
+                    var afstand = 100;
+                    
+
+                    $('body').append(boble);
+
+                    // startværdier
+                    boble.css({
+                        left: Math.random()*afstand+"%", 
+                        top: Math.random()*afstand+"%",
+                        width: 0,
+                        height:0,
+                    })
+
+                    // animationsværdier
+                    boble.animate({
+                        width: 100, 
+                        height: 100, 
+                    }, 4000);
+
+                    // naar man  klikker paa boble
+                    function bobleklik(){
+                        pops=pops+1;
+                        $('#point').text("Point: "+pops);
+                        
+                        boble.stop();
+                        boble.addClass("sprængt");
+                        setTimeout(function(){
+                            boble.remove();
+                        }, 500);
+                    }
+                    boble.click(bobleklik);
+
+                    
+
+                }
+                // koden indeni her kører hvert sekund
+                setInterval(lavnyboble, 400);
+        
+            </script>
+</body>
