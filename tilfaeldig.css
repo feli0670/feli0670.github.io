@@ -28,7 +28,7 @@ body {
 
 #forside{
     background-repeat: no-repeat;
-    background-image: url(./asset/forside.png);
+    background-image: url(./assets/forside.png);
     display: block;
     background-size: contain;
     width: 75px;
@@ -36,7 +36,7 @@ body {
 }
 #forside:hover {
     background-size: contain;
-     background-image: url(./assets/forsideklik.png);
+    background-image: url(./assets/forsideklik.png);
 }
 
 #spil {
@@ -50,5 +50,5 @@ body {
 
 #spil:hover {
     background-size: contain;
-    background-image: url(./assets/controllerklik.png);
+    background-image: url(./assets/controllerklik.png)
 }

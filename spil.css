@@ -27,13 +27,13 @@ body {
 }
 
 #forside{
+    background-repeat: no-repeat;
     background-image: url(./assets/forside.png);
     display: block;
     background-size: contain;
     width: 75px;
     height: 75px;
 }
-
 #forside:hover {
     background-size: contain;
     background-image: url(./assets/forsideklik.png);
